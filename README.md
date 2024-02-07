@@ -1,17 +1,32 @@
 # VIPs-Curium-Task3
 
-Task workflow:
-Three types of users can log in.
-1. Normal user
-2. Surgeon
-3. Radiologist
-• When a first time user registers, it asks for Firstname, Lastname, Username, Password,
-Email, and Type of user
-• When NORMAL USER logs in, he should be able to upload a CT scan (photo for now)
-• When surgeon logs in, he can see all the entries made by all the normal users whose status is complete
-• When radiologist logs in, he should see all the CTs uploaded by all the normal users
-Here, normal user, surgeon and radiologist roles are selected by the user while registering the first time, after that every time they login, they are redirected to the specific page mentioned above
+Task Workflow for User Management System
+This project involves the development of a user management system with specific functionalities for three types of users: Normal User, Surgeon, and Radiologist. Below is the workflow detailing the functionalities for each type of user:
 
+User Registration:
+When a user registers for the first time, the system prompts for the following information:
+First Name
+Last Name
+Username
+Password
+Email
+Type of User (Normal User, Surgeon, or Radiologist)
+User Login:
+Upon subsequent logins, users are redirected to their respective pages based on their type of user.
+Functionalities for Each User Type:
+Normal User:
+
+Upon login, Normal Users are directed to a page where they can upload CT scans (photos for now).
+Surgeon:
+
+Surgeons, upon login, can access a page where they can view all entries made by Normal Users whose status is marked as complete. This allows surgeons to review CT scans uploaded by Normal Users.
+Radiologist:
+
+Radiologists, upon login, can access a page where they can view all CT scans uploaded by Normal Users. This facilitates radiologists in analyzing and interpreting the CT scans.
+Additional Notes:
+The system ensures that users are redirected to the appropriate page based on their designated role.
+The registration process captures necessary user information including type of user for role-based access.
+This system is designed to streamline the workflow for users with different roles within the medical imaging domain.
 
 ## Project Setup
 ```bash
