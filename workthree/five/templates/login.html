@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: "Abel", sans-serif;
+            opacity: 0.95;
+        }
+
+        form {
+            width: 450px;
+            min-height: 500px;
+            height: auto;
+            border-radius: 5px;
+            margin: 2% auto;
+            box-shadow: 0 9px 50px rgb(244, 143, 118);
+            padding: 2%;
+            background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
+        }
+
+        form .con {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .headerr {
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .headerr h1 {
+            font-weight: 800;
+            font-size: 30px;
+            color: rgb(20, 69, 61);
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .headerr h2 {
+            font-weight: 200;
+            font-size: 16px;
+            color: rgb(20, 69, 61);
+            margin: 0;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        header {
+            margin: 2% auto 5% auto;
+            text-align: center;
+        }
+
+        header h2 {
+            font-size: 250%;
+            color: #3e403f;
+        }
+
+        header p {
+            letter-spacing: 0.05em;
+        }
+
+        .input-item {
+            background: #fff;
+            color: #333;
+            padding: 14.5px 0px 15px 9px;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        input[class="form-control"] {
+            width: 240px;
+            height: 50px;
+            margin-top: 2%;
+            padding: 15px;
+            font-size: 16px;
+            color: #5e6472;
+            outline: none;
+            border: none;
+            border-radius: 0px 5px 5px 0px;
+            transition: 0.2s linear;
+        }
+        input[id="txt-input"] {
+            width: 250px;
+        }
+        input:focus {
+            transform: translateX(-2px);
+            border-radius: 5px;
+        }
+
+        button {
+            display: inline-block;
+            color: #252537;
+            width: 280px;
+            height: 50px;
+            padding: 0 20px;
+            background: #fff;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s linear;
+            margin: 7% auto;
+            letter-spacing: 0.05em;
+        }
+
+        .wow {
+            display: inline-block;
+            color: #252537;
+            width: 280px;
+            height: 50px;
+            text-decoration: none;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s linear;
+            margin: 7% auto;
+            letter-spacing: 0.05em;
+            width: 48%;
+            display: inline-block;
+            margin-left: 2%;
+            background: #b8f2e6;
+        }
+
+        button:hover {
+            transform: translatey(3px);
+            box-shadow: none;
+        }
+
+        button:hover {
+            animation: ani9 0.4s ease-in-out infinite alternate;
+        }
+        @keyframes ani9 {
+            0% {
+                transform: translateY(3px);
+            }
+            100% {
+                transform: translateY(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="headerr">
+        <img
+            class="logo"
+            src="https://media.licdn.com/dms/image/C560BAQExlYi7r4CpWg/company-logo_200_200/0/1663591474302?e=2147483647&v=beta&t=3Mix-eHlRE8yD_x4XNq-B0wGuhSOjtffHssBw5jdvEc"
+            alt="Company Logo"
+        />
+        <h1>Curium Life</h1>
+        <h2>Higher Intelligence Safer Surgery</h2>
+    </div>
+    <div class="overlay">
+        <div class="container mt-5">
+            <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+                <div class="con">
+                    <header class="head-form">
+                        {% csrf_token %}
+                        <h2>Login</h2>
+                        <p>Login to Curium using your username and password</p>
+                        <br /><br />
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">{{ message }}</div>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </header>
+                    <br />
+
+                    <div class="field-set">
+                        <div class="mb-3">
+                            <span class="input-item">
+                                <i class="fa fa-user-circle"></i>
+                            </span>
+                            <input
+                                name="username"
+                                placeholder="@UserName"
+                                required
+                                type="text"
+                                class="form-control"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <span class="input-item">
+                                <i class="fa fa-key"></i>
+                            </span>
+                            <input
+                                name="password"
+                                required
+                                type="password"
+                                placeholder="Password"
+                                class="form-control"
+                            />
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+
+                    <div class="other">
+                        <p>
+                            Don't have an account?
+                            <a class="wow" href="{% url 'register' %}">Register</a>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
